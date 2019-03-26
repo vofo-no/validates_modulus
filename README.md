@@ -1,5 +1,7 @@
 # ValidatesModulus
 
+[![Build Status](https://travis-ci.org/vofo-no/validates_modulus.svg?branch=master)](https://travis-ci.org/vofo-no/validates_modulus)
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/validates_modulus`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
@@ -22,7 +24,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem validates check digit of any ActiveModel attribute. Currently it supports ```:mod11```.
+
+    class Organization
+      include ActiveModel::Validations
+      attr_accessor :number
+
+      validates :number, modulus: :mod11
+    end
+
+You can overwrite the default error message (```:bad_checksum```) by passing a ```:message``` option argument:
+
+    validates :number, modulus: { with: :mod11, message: 'Not a valid number' }
 
 ## Development
 
@@ -32,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/validates_modulus.
+Bug reports and pull requests are welcome on GitHub at https://github.com/vofo-no/validates_modulus.
 
 ## License
 
