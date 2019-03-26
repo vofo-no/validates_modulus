@@ -1,6 +1,5 @@
 require "validates_modulus/version"
+require "validates_modulus/modulus_validator"
 
 module ValidatesModulus
-  class Error < StandardError; end
-  # Your code goes here...
 end
