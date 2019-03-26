@@ -6,8 +6,8 @@ require "validates_modulus/version"
 Gem::Specification.new do |spec|
   spec.name          = "validates_modulus"
   spec.version       = ValidatesModulus::VERSION
-  spec.authors       = ["Mats Grimsgaard"]
-  spec.email         = ["mg@vofo.no"]
+  spec.authors       = ["Voksenopplæringsforbundet", "Mats Grimsgaard"]
+  spec.email         = ["vofo@vofo.no"]
 
   spec.summary       = %q{ActiveModel validator for modulus algorithm.}
   spec.homepage      = "https://github.com/vofo-no/validates_modulus"
